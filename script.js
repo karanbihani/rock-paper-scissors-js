@@ -43,6 +43,26 @@ function playRound(userChoice) {
         if (userChoice === "paper") botScore+=1;
         if (userChoice === "scissors") return 0;
     }
+
+    const userScoreBoard = document.querySelector(".user-score");
+    const botScoreBoard = document.querySelector(".bot-score");
+
+    userScoreBoard.innerText = "User Score is :" +userScore;
+    botScoreBoard.innerText = "User Score is :" +botScore;
+
+    if(userScore ===5 || botScore ===5){
+        console.log("why");
+        if(userScore === 5){
+            alert("User Won")
+        }
+        else if(botScore === 5){
+            alert("bot Won")
+        }
+
+        userScore=botScore=0;
+        userScoreBoard.innerText="";
+        botScoreBoard.innerText="";
+    }
 }
 
 // function playGame() {
